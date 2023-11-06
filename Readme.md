@@ -15,3 +15,21 @@ pip install "uvicorn[standard]"
   - ``export API_KEY=<Your API Key>``
 - Run below command
   - ``uvicorn main:app --reload``
+ 
+### Sample curL
+```
+  curl --location 'http://127.0.0.1:8000' \
+  --header 'Content-Type: application/json' \
+  --data '{
+      "city": "tuticorin",
+      "output_format": "xml"
+  }'
+```
+```
+curl --location 'http://127.0.0.1:8000' \
+--header 'Content-Type: application/json' \
+--data '{
+    "city": "tuticorin",
+    "output_format": "json"
+}'
+```
