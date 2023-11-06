@@ -19,13 +19,12 @@ async def get_weather_details(city: City):
 
     url = "https://weatherapi-com.p.rapidapi.com/current.json?q=" + city.city
 
-    payload = {}
     headers = {
         'X-RapidAPI-Key': os.getenv("API_KEY"),
         'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
     }
 
-    response = requests.request("GET", url, headers=headers, data=payload)
+    response = requests.request("GET", url, headers=headers)
 
     if 200 <= response.status_code <= 299:
         data = response.json()
